@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-export const useGetPokemon = (url) => {
-	const [name, setName] = useState('');
-	const [picture, setPicture] = useState('');
-	const [types, setTypes] = useState([]);
+export const useGetPokemon = (id) => {
+	const [pokemon, setpokemon] = useState({});
 
 	const getPokemon = async (url) => {
-		const response = await fetch(url);
-		const data = await response.json();
-		setName(data.name);
-		setPicture(data.sprites.front_default);
-		setTypes(data.types);
+		const response = await axios.get(url);
+		const data = response.data;
+		setpokemon(data);
 	};
 	useEffect(() => {
-		getPokemon(url);
+		getPokemon(`https://pokeapi.co/api/v2/pokemon/${id}`);
 	}, []);
 
-	return [name, picture, types];
+	return pokemon;
 };

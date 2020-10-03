@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useGetMultiple = () => {
+export const useGetMultiple = (cantPokemon) => {
 	const [pokemons, setpokemons] = useState([]);
 
 	const listOfPokes = [];
@@ -16,7 +16,7 @@ export const useGetMultiple = () => {
 	};
 
 	useEffect(() => {
-		getMultiple('https://pokeapi.co/api/v2/pokemon/?limit=12');
+		getMultiple(`https://pokeapi.co/api/v2/pokemon/?limit=${cantPokemon}`);
 	}, []);
 
 	return pokemons;
