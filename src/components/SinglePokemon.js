@@ -1,9 +1,20 @@
 import React from 'react';
-import { useGetPokemon } from '../hooks/useGetPokemon';
+import { useSelector, useDispatch } from 'react-redux';
 import '../styles/pokemoncard.css';
+import { addFavorite } from '../actions/pokemonactions';
 
 export const SinglePokemon = () => {
-	const pokemon = useGetPokemon('charizard');
+	const dispatch = useDispatch();
+	const pokemon = useSelector((state) => state.pokemonReducer.pokemon);
+
+	const addFavoritePokemon = () => {
+		dispatch(
+			addFavorite({
+				name: pokemon.name,
+				picture: pokemon.sprites?.front_default,
+			})
+		);
+	};
 
 	return (
 		<section className="pokemon-card">
@@ -18,7 +29,9 @@ export const SinglePokemon = () => {
 					{type.type.name}
 				</p>
 			))}
-			<button className="pokemon-card__button">+</button>
+			<button className="pokemon-card__button" onClick={addFavoritePokemon}>
+				+
+			</button>
 		</section>
 	);
 };
