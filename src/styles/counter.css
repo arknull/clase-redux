@@ -1,0 +1,23 @@
+.counter {
+	width: 400px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+}
+.counter__number {
+	text-align: center;
+	border: 2px solid rgb(161, 120, 219);
+	height: 400px;
+	line-height: 400px;
+	font-size: 70px;
+	border-radius: 10px;
+}
+.counter__button {
+	margin-top: 20px;
+	padding: 20px;
+	font-size: 1.2em;
+	background: linear-gradient(to top, rgb(211, 204, 227), rgb(233, 228, 240));
+	border: 2px solid rgb(161, 120, 219);
+	border-radius: 10px;
+}

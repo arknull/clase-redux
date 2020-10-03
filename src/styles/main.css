@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.main-title {
+	margin: 40px;
+	text-align: center;
+}
+
+.poke-list {
+	display: flex;
+	flex-wrap: wrap;
+}
