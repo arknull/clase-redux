@@ -1,0 +1,21 @@
+.searchbar {
+	width: 100%;
+}
+
+.searchbar__title {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.searchbar__input {
+	border-radius: 50px;
+	border: 2px solid black;
+	padding: 8px;
+	width: 100%;
+	text-align: center;
+	outline: none;
+}
+
+.searchbar__input:focus {
+	border: 2px solid rgb(161, 120, 219);
+}
