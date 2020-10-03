@@ -12,7 +12,7 @@ export const App = () => {
 			{/* <Counter /> */}
 			<SearchBar />
 			<SinglePokemon />
-			{/* <ListOfPokemons /> */}
+			<ListOfPokemons />
 		</>
 	);
 };
